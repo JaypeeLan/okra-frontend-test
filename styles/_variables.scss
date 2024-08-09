@@ -1,0 +1,62 @@
+$text-primary: #202022;
+$text-secondary: #5e5e60;
+$text-label: #464649;
+$text-subdued: #909092;
+$text-error: #ff401e;
+$text-light: #fefeff;
+$text-info: #1a6aed;
+$text-white: #f2f2f3;
+
+$surface-primary-action: #824fe7;
+$surface-primary-action-hover: #a277ff;
+$surface-action-neutral-hover: #303032;
+$surface-action-neutral: #202022;
+$surface-tertiary-highlight: #dadadb;
+$surface-secondary-action-hover: #f2f2f3;
+$surface-tertiary-dim: #e6e6e7;
+$surface-on-bg-invert: #fefeff;
+
+// box shadows
+$elevationBoxShadow-1: 0 0.5px 0 0 rgba(86, 94, 113, 0.08),
+  0 0.5px 0 0 rgba(63, 71, 89, 0.12), 0 1px 0.5px 0 rgba(0, 0, 0, 0.16);
+$elevationBoxShadow-2: 0 4px 4px 0 rgba(63, 71, 89, 0.04),
+  0 8px 8px 0 rgba(0, 0, 0, 0.08);
+// pressed btns shadows
+$pressedEffect: 0 -1px 2px 0 rgba(34, 44, 59, 0.48);
+// focused btns shadows
+$focusedBEffect: 0 0 0 4px rgba(137, 87, 239, 0.2);
+$focusedNEffect: 0 0 0 4px rgba(11, 10, 12, 0.16);
+$effectError: 0 0 0 4px rgba(255, 64, 30, 0.24);
+
+$border-primary: #824fe7;
+$border-error: #ff401e;
+$border-light: #dadadb;
+
+$surface-bg: #fefeff;
+$surface-subdue: #e6e6e7;
+$surface-success-solid: #2aaf2a;
+$surface-success-solid-layer: rgba(42, 175, 42, 0.4);
+$surface-warning-solid: #e87b06;
+$surface-warning-solid-layer: rgba(232, 123, 6, 0.4);
+$surface-critical-solid: #ff401e;
+$surface-critical-solid-layer: rgba(255, 64, 30, 0.4);
+$surface-info-invert: #eaf3ff;
+
+$border-width: 1px;
+$border-width-md: 1.5px;
+
+$purple-400: #d2bcff;
+$orange-400: #ffb693;
+$purple-500: #ba9aff;
+$orange-500: #ff8c51;
+$dark-600: #303032;
+
+// spacing
+$spacing-xsm: 2px;
+$spacing-sm: 4px;
+$spacing-md: 6px;
+$spacing-lg: 8px;
+$spacing-xl: 12px;
+$spacing-2xl: 16px;
+$spacing-2xl: 24px;
+$spacing-4xl: 32px;
