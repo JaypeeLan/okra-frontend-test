@@ -1,11 +1,12 @@
-import { Footer, Header } from "../components";
+import { Footer, Header, ResourcesSection } from "../components";
 import "../styles/main.scss";
 
 const App = () => {
   return (
-    <div>
+    <div style={{ marginTop: "60px" }}>
       <Header />
-      <div style={{ minHeight: "200vh" }}></div>
+      <div></div>
+      <ResourcesSection />
       <Footer />
     </div>
   );
