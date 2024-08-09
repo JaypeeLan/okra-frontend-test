@@ -26,3 +26,20 @@ span {
   font-size: 14px;
   line-height: 22px;
 }
+
+button {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+a {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $text-subdued;
+  }
+}
