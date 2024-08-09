@@ -8,11 +8,10 @@ import "../styles/main.scss";
 
 const App = () => {
   return (
-    <div style={{ marginTop: "60px" }}>
-      <ContactSection />
+    <div>
       <Header />
+      <ContactSection />
       <ResourcesSection />
-
       <Footer />
     </div>
   );

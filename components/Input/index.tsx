@@ -34,6 +34,12 @@ const Input: React.FC<InputProps> = ({
     }
   };
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    onChange(e.target.value.trim());
+  };
+
   return (
     <div className={inputStyles.wrapper}>
       {type === "textarea" ? (
@@ -42,12 +48,11 @@ const Input: React.FC<InputProps> = ({
             isFocused ? inputStyles.focused : ""
           } ${error ? inputStyles.error : ""}`}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder={placeholder}
           disabled={disabled}
-          style={{ minHeight: "134px" }}
         />
       ) : (
         <input
@@ -56,7 +61,7 @@ const Input: React.FC<InputProps> = ({
           } ${error ? inputStyles.error : ""}`}
           type="text"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder={placeholder}
@@ -64,13 +69,7 @@ const Input: React.FC<InputProps> = ({
         />
       )}
       {validationText && (
-        <div
-          className={`${inputStyles.validationText} ${
-            error ? inputStyles.errorText : ""
-          }`}
-        >
-          {validationText}
-        </div>
+        <span className={inputStyles.validationText}>{validationText}</span>
       )}
     </div>
   );

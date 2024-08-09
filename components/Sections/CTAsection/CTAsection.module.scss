@@ -9,6 +9,9 @@
   max-width: 650px;
   padding: 128px 0;
   margin: 0 auto;
+  @include respond(phone) {
+    padding: $spacing-5xl $spacing-xl;
+  }
 }
 
 .text {
@@ -18,6 +21,11 @@
   h3 {
     margin-bottom: $spacing-xl;
   }
+
+  @include respond(phone) {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
 .boxes-container {
@@ -26,6 +34,10 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(2, auto);
   gap: $spacing-2xl;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cta-box {
@@ -37,8 +49,15 @@
   justify-content: space-between;
   transition: all 0.3s ease-in-out;
 
+  @include respond(phone) {
+    min-height: 200px;
+  }
   &.full-column {
     grid-row: span 2;
+
+    @include respond(phone) {
+      grid-row: span 1;
+    }
   }
 
   &.purple {

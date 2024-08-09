@@ -4,6 +4,7 @@ import Input from "../../Input";
 import Dropdown from "../../Select/";
 import Button from "../../Button";
 import Success from "../../Success";
+import validateForm from "../../../helpers/validateForm";
 
 type FormData = {
   firstName: string;
@@ -39,20 +40,6 @@ const Form: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const validateForm = (): Partial<FormData> => {
-    const newErrors: Partial<FormData> = {};
-    if (!formData.firstName) newErrors.firstName = "First name is required.";
-    if (!formData.lastName) newErrors.lastName = "Last name is required.";
-    if (!formData.email) newErrors.email = "Email is required.";
-    if (!formData.companyName)
-      newErrors.companyName = "Company name is required.";
-    if (!formData.websiteUrl) newErrors.websiteUrl = "Website URL is required.";
-    if (!formData.selectedOption)
-      newErrors.selectedOption = "Please select an option.";
-    if (!formData.message) newErrors.message = "Message is required.";
-    return newErrors;
-  };
-
   const handleChange = (field: keyof FormData, value: string) => {
     setFormData((prevData) => ({ ...prevData, [field]: value }));
   };
@@ -63,7 +50,7 @@ const Form: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newErrors = validateForm();
+    const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {

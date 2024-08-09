@@ -20,10 +20,15 @@
   width: 100%;
   max-width: 822px;
   margin: 80px auto 0;
+
+  @include respond(phone) {
+    padding: $spacing-xl;
+  }
 }
 
 .content {
   @include display-flex($align: flex-start);
+  flex-wrap: wrap;
   padding-bottom: $spacing-4xl;
   margin-bottom: $spacing-4xl;
   border-bottom: $border-width solid $border-light;
@@ -37,6 +42,12 @@
   @include display-flex($align: flex-start);
   width: 100%;
   max-width: 481px;
+
+  @include respond(phone) {
+    max-width: 100%;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
 }
 
 .category {

@@ -7,8 +7,19 @@
   max-width: 650px;
   padding-top: 128px;
   padding-bottom: 128px;
+
+  @include respond(phone) {
+    flex-direction: column;
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+    text-align: center;
+  }
 }
 
 .text {
   max-width: 346px;
+
+  @include respond(phone) {
+    max-width: 100%;
+  }
 }

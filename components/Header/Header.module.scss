@@ -7,8 +7,18 @@
   width: 100%;
   z-index: 1000;
   @include display-flex;
+  justify-content: space-between;
   padding: $spacing-xl 64px;
   background: $surface-bg;
+  transition: border-bottom 0.3s ease;
+
+  @include respond(tab-port) {
+    padding: $spacing-xl 16px;
+  }
+
+  @include respond(phone) {
+    padding: $spacing-lg 16px;
+  }
 }
 
 .logo {
@@ -28,18 +38,101 @@
   height: 20px;
 }
 
-.navLinks {
+.navigationLinks {
   @include display-flex;
   padding: $spacing-sm;
   max-width: 500px;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.navigationLinksMobile {
+  @include display-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-2xl 16px;
 }
 
 .link {
   font-size: 14px;
   padding: 5px $spacing-xl;
   line-height: 22px;
+
+  @include respond(tab-port) {
+    padding: $spacing-lg 0;
+  }
 }
 
 .headerCTA {
   @include display-flex($gap: 12px);
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.headerCTAMobile {
+  @include display-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: $spacing-xl;
+}
+
+.hamburger {
+  display: none;
+
+  @include respond(tab-port) {
+    display: block;
+    cursor: pointer;
+    padding: $spacing-lg;
+    z-index: 1010;
+
+    &.open .bar {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: $text-primary;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mobileMenu {
+  display: none;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: $surface-bg;
+    box-shadow: $elevationBoxShadow-2;
+    padding: $spacing-2xl 16px;
+    display: none;
+    transform: translateY(-20px);
+    transition: display 0.3s ease, transform 0.3s ease;
+
+    &.open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

@@ -6,6 +6,11 @@ h1,
   font-size: 72px;
   line-height: 80px;
   letter-spacing: -1.25px;
+
+  @include respond(phone) {
+    font-size: 48px;
+    line-height: 56px;
+  }
 }
 
 h3,
@@ -14,6 +19,11 @@ h3,
   font-size: 56px;
   line-height: 64px;
   letter-spacing: -1px;
+
+  @include respond(phone) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 h5,
@@ -21,6 +31,11 @@ h5,
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
+
+  @include respond(phone) {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
 p,
