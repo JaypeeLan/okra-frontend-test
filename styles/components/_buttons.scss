@@ -1,0 +1,6 @@
+@use "../index" as *;
+
+button {
+  border-radius: $spacing-md;
+  padding: $spacing-lg $spacing-xl;
+}

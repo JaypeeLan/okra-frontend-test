@@ -1,0 +1,96 @@
+@use "../../styles/index" as *;
+
+.button {
+  @include display-flex(center, center, row, $spacing-lg);
+  border-radius: $spacing-md;
+  padding: $spacing-lg $spacing-xl;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &.primary {
+    background-color: $surface-primary-action;
+    color: $text-light;
+
+    &:hover {
+      background-color: $surface-primary-action-hover;
+      box-shadow: $elevationBoxShadow-1;
+    }
+
+    &:active {
+      box-shadow: $pressedEffect;
+    }
+
+    &:focus {
+      background-color: $surface-primary-action;
+      box-shadow: $focusedBEffect;
+    }
+
+    &.loading,
+    &.disabled {
+      background-color: $surface-subdue;
+      color: $text-subdued;
+      cursor: not-allowed;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.secondary {
+    background-color: $surface-action-neutral;
+    color: $text-white;
+
+    &:hover {
+      background-color: $surface-action-neutral-hover;
+      box-shadow: $elevationBoxShadow-1;
+    }
+
+    &:active {
+      box-shadow: $pressedEffect;
+    }
+
+    &:focus {
+      background-color: $surface-primary-action;
+      box-shadow: $focusedNEffect;
+    }
+
+    &.loading,
+    &.disabled {
+      background-color: $surface-subdue;
+      color: $text-subdued;
+      cursor: not-allowed;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: $text-label;
+
+    &:hover {
+      background-color: $surface-secondary-action-hover;
+    }
+
+    &:active {
+      background-color: $surface-tertiary-highlight;
+    }
+
+    &:focus {
+      background-color: $surface-tertiary-dim;
+    }
+
+    &.loading,
+    &.disabled {
+      background-color: transparent;
+      color: $text-subdued;
+      cursor: not-allowed;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
