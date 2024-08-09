@@ -8,7 +8,6 @@ This project is a Vite-powered React application using TypeScript. Below is the 
 project-root/
 ├── src/
 │   ├── components/      # React components
-│   ├── pages/           # Page components
 │   ├── styles/          # SCSS styles
 │   ├── utils/           # Utility functions
 │   ├── types/           # TypeScript types

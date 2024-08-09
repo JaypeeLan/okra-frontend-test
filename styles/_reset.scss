@@ -1,4 +1,3 @@
-/* Reset and base styles */
 *,
 *::before,
 *::after {
@@ -69,19 +68,6 @@ video {
   -ms-text-size-adjust: 100%;
 }
 
-footer,
-header,
-nav,
-section,
-main {
-  display: block;
-}
-
-body {
-  line-height: 1;
-  font-family: "PPTelegraf", sans-serif; /* Use your custom font */
-}
-
 ol,
 ul {
   list-style: none;
@@ -145,4 +131,7 @@ img {
 
 button {
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
 }
