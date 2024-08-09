@@ -1,0 +1,44 @@
+@use "../../styles/index" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  @include display-flex;
+  padding: $spacing-xl 64px;
+}
+
+.logo {
+  @include display-flex($gap: 4px);
+  height: 24px;
+}
+
+.status {
+  background-color: $surface-info-invert;
+  color: $text-info;
+  font-weight: 600;
+  font-size: 8px;
+  padding: 5px 8px;
+  border-radius: $spacing-2xl;
+  line-height: 10px;
+  width: 36px;
+  height: 20px;
+}
+
+.navLinks {
+  @include display-flex;
+  padding: $spacing-sm;
+  max-width: 500px;
+}
+
+.link {
+  font-size: 14px;
+  padding: 5px $spacing-xl;
+  line-height: 22px;
+}
+
+.headerCTA {
+  @include display-flex($gap: 12px);
+}
