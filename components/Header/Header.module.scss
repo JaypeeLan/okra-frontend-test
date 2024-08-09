@@ -126,7 +126,7 @@
     background: $surface-bg;
     box-shadow: $elevationBoxShadow-2;
     padding: $spacing-2xl 16px;
-    display: none;
+    opacity: 0;
     transform: translateY(-20px);
     transition: display 0.3s ease, transform 0.3s ease;
 
