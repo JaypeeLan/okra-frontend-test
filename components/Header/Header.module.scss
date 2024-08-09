@@ -8,6 +8,7 @@
   z-index: 1000;
   @include display-flex;
   padding: $spacing-xl 64px;
+  background: $surface-bg;
 }
 
 .logo {

@@ -1,4 +1,4 @@
-import { Header } from "../components";
+import { Footer, Header } from "../components";
 import "../styles/main.scss";
 
 const App = () => {
@@ -6,6 +6,7 @@ const App = () => {
     <div>
       <Header />
       <div style={{ minHeight: "200vh" }}></div>
+      <Footer />
     </div>
   );
 };

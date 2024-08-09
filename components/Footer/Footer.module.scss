@@ -1,0 +1,104 @@
+@use "../../styles/index" as *;
+
+.footer {
+  min-height: 880px;
+  background: $surface-overlay;
+}
+
+.topImageWrapper,
+.bottomImageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.centeredImage {
+  display: block;
+  max-width: 1323px;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 822px;
+  margin: 80px auto 0;
+}
+
+.content {
+  @include display-flex($align: flex-start);
+  padding-bottom: $spacing-4xl;
+  margin-bottom: $spacing-4xl;
+  border-bottom: $border-width solid $border-light;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.links {
+  @include display-flex($align: flex-start);
+  width: 100%;
+  max-width: 481px;
+}
+
+.category {
+  p {
+    margin-bottom: $spacing-3xl;
+    font-size: 12px;
+    color: $text-subdued;
+    font-weight: 500;
+  }
+}
+
+.link {
+  margin-bottom: $spacing-3xl;
+}
+
+.linkIcon {
+  vertical-align: top;
+  margin-right: $spacing-xl;
+}
+
+.linkText {
+  color: $text-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.info {
+  @include display-flex;
+  margin-bottom: 64px;
+
+  span {
+    font-size: 13px;
+    color: $text-label;
+    line-height: 20px;
+  }
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  margin-right: $spacing-lg;
+}
+
+.operationStatus {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $surface-success-solid-layer;
+  position: relative;
+  margin-right: $spacing-lg;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $surface-success-solid;
+  }
+}
