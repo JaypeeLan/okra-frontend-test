@@ -1,0 +1,93 @@
+@use "../../styles/index" as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 16px;
+  border-radius: 6px;
+  background: $surface-secondary-action-hover;
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  color: $text-primary;
+  transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    &::placeholder {
+      color: $text-secondary;
+      transition: color 0.2s;
+    }
+  }
+
+  &:focus {
+    background: $surface-bg;
+    border: $border-width-md solid $border-primary;
+    box-shadow: $focusedBEffect;
+    outline: none;
+
+    &::placeholder {
+      color: $text-subdued;
+      font-size: 10px;
+      margin-top: 10px;
+      line-height: 14px;
+      margin-bottom: 2px;
+      position: absolute;
+      top: 0;
+      transition: font-size 0.2s, line-height 0.2s, margin-bottom 0.2s,
+        color 0.2s;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    color: $text-subdued;
+    transition: color 0.2s;
+  }
+}
+
+.textarea {
+  min-height: 134px;
+  transition: min-height 0.2s;
+}
+
+.focused {
+  &::placeholder {
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 2px;
+    color: $text-subdued;
+    transition: font-size 0.2s, line-height 0.2s, margin-bottom 0.2s, color 0.2s;
+  }
+}
+
+.error {
+  border: $border-width-md solid $border-error;
+  box-shadow: $effectError;
+  transition: border 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: $text-subdued;
+    transition: color 0.2s;
+  }
+}
+
+.validationText {
+  margin-top: 8px;
+  color: $text-secondary;
+  font-size: 13px;
+  line-height: 18px;
+  transition: color 0.2s;
+}
+
+.errorText {
+  color: $text-error;
+  transition: color 0.2s;
+}

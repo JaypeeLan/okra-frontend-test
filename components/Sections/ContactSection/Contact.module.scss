@@ -1,0 +1,37 @@
+@use "../../../styles/index" as *;
+
+.wrapper {
+  background: $surface-bg;
+}
+
+.container {
+  @include display-flex($align: flex-start, $gap: $spacing-4xl);
+  width: 100%;
+  max-width: 650px;
+  padding: 128px 0;
+  margin: 0 auto;
+}
+
+.text {
+  max-width: 309px;
+  margin-bottom: 80px;
+
+  p {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.form {
+  @include display-flex(
+    $direction: column,
+    $align: flex-start,
+    $gap: $spacing-2xl
+  );
+  width: 100%;
+}
+
+.nameFields {
+  display: flex;
+  gap: $spacing-2xl;
+}

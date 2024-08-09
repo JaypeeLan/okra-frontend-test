@@ -1,0 +1,145 @@
+@use "../../styles/index" as *;
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  background-color: $surface-secondary-action-hover;
+  height: 56px;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:focus-within,
+  &.active {
+    border: $border-width-md solid $border-primary;
+    box-shadow: $focusedBEffect;
+    background-color: $surface-bg;
+
+    .placeholder {
+      font-size: 10px;
+      line-height: 14px;
+      top: 10px;
+      color: $text-subdued;
+      margin-bottom: 2px;
+    }
+  }
+
+  &:hover .placeholder {
+    color: $text-secondary;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $surface-secondary-action-hover;
+    color: $text-primary;
+  }
+
+  &.error {
+    border: $border-width-md solid $border-error;
+    box-shadow: $effectError;
+  }
+
+  &.disabled,
+  &.error {
+    .dropdownField {
+      background-color: $surface-secondary-action-hover;
+      color: $text-primary;
+    }
+  }
+}
+
+.dropdownField {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  padding: 0 16px;
+
+  .placeholder {
+    color: $text-subdued;
+    font-size: 13px;
+    line-height: 18px;
+    transition: all 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+
+    &.shrink {
+      font-size: 10px;
+      line-height: 14px;
+      top: 10px;
+      color: $text-subdued;
+      margin-bottom: 2px;
+      transform: none;
+    }
+  }
+
+  .selectedValue {
+    color: $text-primary;
+    font-size: 13px;
+    line-height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+
+    &.shrink {
+      top: 22px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .arrowIcon {
+    margin-left: auto;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 8px;
+  background-color: $surface-bg;
+  border-radius: 6px;
+  box-shadow: $elevationBoxShadow-3;
+  padding: $spacing-sm;
+  color: $text-label;
+  z-index: 1000;
+}
+
+.dropdownOption {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  padding: 5px $spacing-lg;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 2px;
+
+  &:hover {
+    background-color: $surface-secondary-action-hover;
+    border-radius: 6px;
+  }
+
+  &.selected {
+    background-color: $surface-secondary-action-hover;
+    border-radius: 6px;
+  }
+}
+
+.validationText {
+  font-size: 13px;
+  line-height: 18px;
+  color: $text-secondary;
+  margin-top: 8px;
+
+  &.errorText {
+    color: $text-error;
+  }
+}
