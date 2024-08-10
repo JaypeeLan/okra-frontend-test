@@ -3,12 +3,20 @@
 .footer {
   min-height: 880px;
   background: $surface-overlay;
+
+  @include respond(tab-port) {
+    min-height: auto;
+  }
 }
 
 .topImageWrapper,
 .bottomImageWrapper {
   display: flex;
   justify-content: center;
+
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .centeredImage {
@@ -19,9 +27,11 @@
 .contentWrapper {
   width: 100%;
   max-width: 822px;
-  margin: 80px auto 0;
+  padding-top: 80px;
+  margin: 0 auto;
 
-  @include respond(phone) {
+  @include respond(tab-port) {
+    padding-top: 40px;
     padding: $spacing-xl;
   }
 }

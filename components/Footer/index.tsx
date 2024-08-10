@@ -57,6 +57,7 @@ const Footer = () => {
           src="/wordmark.png"
           alt="Wordmark"
           className={footerStyles.centeredImage}
+          width={"100%"}
         />
       </div>
     </div>
