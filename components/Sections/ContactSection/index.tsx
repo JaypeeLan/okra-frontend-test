@@ -31,6 +31,11 @@ const Form: React.FC = () => {
     handleChange("selectedOption", value);
   };
 
+  const validateField = (field: keyof FormData) => {
+    const newErrors = validateForm(formData);
+    setErrors((prevErrors) => ({ ...prevErrors, [field]: newErrors[field] }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm(formData);
@@ -68,6 +73,7 @@ const Form: React.FC = () => {
               placeholder="First Name"
               error={!!errors.firstName}
               validationText={errors.firstName}
+              validate={() => validateField("firstName")}
             />
             <Input
               type="text"
@@ -76,6 +82,7 @@ const Form: React.FC = () => {
               placeholder="Last Name"
               error={!!errors.lastName}
               validationText={errors.lastName}
+              validate={() => validateField("lastName")}
             />
           </div>
 
@@ -86,6 +93,7 @@ const Form: React.FC = () => {
             placeholder="Email"
             error={!!errors.email}
             validationText={errors.email}
+            validate={() => validateField("email")}
           />
           <Input
             type="text"
@@ -94,6 +102,7 @@ const Form: React.FC = () => {
             placeholder="Company name"
             error={!!errors.companyName}
             validationText={errors.companyName}
+            validate={() => validateField("companyName")}
           />
           <Dropdown
             options={options}
@@ -110,6 +119,7 @@ const Form: React.FC = () => {
             placeholder="Website URL"
             error={!!errors.websiteUrl}
             validationText={errors.websiteUrl}
+            validate={() => validateField("websiteUrl")}
           />
           <Input
             type="textarea"
@@ -118,6 +128,7 @@ const Form: React.FC = () => {
             placeholder="Message"
             error={!!errors.message}
             validationText={errors.message}
+            validate={() => validateField("message")}
           />
           <Button type="submit" disabled={loading} loading={loading}>
             {loading ? "Sending message..." : "Send Message"}

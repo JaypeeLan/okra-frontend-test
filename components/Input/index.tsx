@@ -9,6 +9,7 @@ type InputProps = {
   error?: boolean;
   disabled?: boolean;
   validationText?: string;
+  validate?: () => void;
 };
 
 const Input: React.FC<InputProps> = ({
@@ -19,6 +20,7 @@ const Input: React.FC<InputProps> = ({
   error = false,
   disabled = false,
   validationText = "",
+  validate,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -31,6 +33,9 @@ const Input: React.FC<InputProps> = ({
   const handleBlur = () => {
     if (!disabled) {
       setIsFocused(false);
+      if (validate) {
+        validate();
+      }
     }
   };
 
