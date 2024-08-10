@@ -1,20 +1,6 @@
 import React, { useState, useEffect, FocusEvent } from "react";
 import styles from "./Dropdown.module.scss";
-
-interface Option {
-  value: string;
-  label: string;
-}
-
-interface DropdownProps {
-  options: Option[];
-  value?: string;
-  placeholder?: string;
-  onChange?: (value: string) => void;
-  error?: boolean;
-  disabled?: boolean;
-  validationText?: string;
-}
+import type { DropdownProps } from "../../types";
 
 const Dropdown: React.FC<DropdownProps> = ({
   options,

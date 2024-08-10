@@ -7,3 +7,18 @@ export interface FormData {
   message: string;
   selectedOption: string;
 }
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+export interface DropdownProps {
+  options: Option[];
+  value?: string;
+  placeholder?: string;
+  onChange?: (value: string) => void;
+  error?: boolean;
+  disabled?: boolean;
+  validationText?: string;
+}

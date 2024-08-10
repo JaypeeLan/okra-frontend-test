@@ -90,3 +90,12 @@ export const Footerlinks = [
     ],
   },
 ];
+
+export const options = [
+  { value: "AWS", label: "AWS" },
+  { value: "Azure", label: "Azure" },
+  { value: "Google Cloud", label: "Google Cloud" },
+  { value: "Render", label: "Render" },
+  { value: "Vercel", label: "Vercel" },
+  { value: "Others", label: "Others" },
+];

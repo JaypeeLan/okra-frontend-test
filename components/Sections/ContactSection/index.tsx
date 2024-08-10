@@ -5,25 +5,8 @@ import Dropdown from "../../Select/";
 import Button from "../../Button";
 import Success from "../../Success";
 import validateForm from "../../../helpers/validateForm";
-
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  companyName: string;
-  websiteUrl: string;
-  message: string;
-  selectedOption: string;
-};
-
-const options = [
-  { value: "AWS", label: "AWS" },
-  { value: "Azure", label: "Azure" },
-  { value: "Google Cloud", label: "Google Cloud" },
-  { value: "Render", label: "Render" },
-  { value: "Vercel", label: "Vercel" },
-  { value: "Others", label: "Others" },
-];
+import { options } from "../../../data";
+import type { FormData } from "../../../types/";
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({

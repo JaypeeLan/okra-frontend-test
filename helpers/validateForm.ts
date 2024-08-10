@@ -1,40 +1,26 @@
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  companyName: string;
-  websiteUrl: string;
-  message: string;
-  selectedOption: string;
-};
+import type { FormData } from "../types";
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
 
 const validateForm = (formData: FormData): FormErrors => {
   const errors: FormErrors = {};
 
-  const formatData = {
-    firstName: formData.firstName.trim(),
-    lastName: formData.lastName.trim(),
-    email: formData.email.trim(),
-    companyName: formData.companyName.trim(),
-    websiteUrl: formData.websiteUrl.trim(),
-    message: formData.message.trim(),
-    selectedOption: formData.selectedOption.trim(),
-  };
-
-  if (!formatData.firstName) errors.firstName = "First name is required.";
-  if (!formatData.lastName) errors.lastName = "Last name is required.";
-  if (!formatData.email) {
+  if (!formData.firstName) errors.firstName = "First name is required.";
+  if (!formData.lastName) errors.lastName = "Last name is required.";
+  if (!formData.email) {
     errors.email = "Email is required.";
-  } else if (!/\S+@\S+\.\S+/.test(formatData.email)) {
+  } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
     errors.email = "Email is invalid.";
   }
-  if (!formatData.companyName) errors.companyName = "Company name is required.";
-  if (!formatData.websiteUrl) errors.websiteUrl = "Website URL is required.";
-  if (!formatData.selectedOption)
+  if (!formData.companyName) errors.companyName = "Company name is required.";
+  if (!formData.websiteUrl) {
+    errors.websiteUrl = "Website URL is required.";
+  } else if (!/^https?:\/\//i.test(formData.websiteUrl)) {
+    errors.websiteUrl = "Website URL must start with http or https.";
+  }
+  if (!formData.selectedOption)
     errors.selectedOption = "Please select an option.";
-  if (!formatData.message) errors.message = "Message is required.";
+  if (!formData.message) errors.message = "Message is required.";
 
   return errors;
 };
