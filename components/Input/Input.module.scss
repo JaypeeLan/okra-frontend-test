@@ -3,6 +3,11 @@
 .wrapper {
   position: relative;
   width: 100%;
+  margin-bottom: 0;
+
+  &.hasError {
+    margin-bottom: -13px;
+  }
 }
 
 .input {
@@ -80,9 +85,7 @@
 }
 
 .validationText {
-  position: absolute;
-  bottom: -22px;
-  left: 0;
+  position: relative;
   color: $text-error;
   font-size: 12px;
   visibility: hidden;

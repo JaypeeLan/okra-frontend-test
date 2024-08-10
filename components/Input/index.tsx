@@ -46,7 +46,9 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <div className={inputStyles.wrapper}>
+    <div
+      className={`${inputStyles.wrapper} ${error ? inputStyles.hasError : ""}`}
+    >
       {type === "textarea" ? (
         <textarea
           className={`${inputStyles.input} ${inputStyles.textarea} ${

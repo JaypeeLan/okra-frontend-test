@@ -36,6 +36,7 @@
   &.error {
     border: $border-width-md solid $border-error;
     box-shadow: $effectError;
+    margin-bottom: 13px; // Add margin when error is visible
   }
 
   &.disabled,
