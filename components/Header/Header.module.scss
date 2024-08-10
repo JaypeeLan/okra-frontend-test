@@ -115,7 +115,7 @@
   display: none;
 
   @include respond(tab-port) {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -128,9 +128,10 @@
     padding: $spacing-2xl 16px;
     opacity: 0;
     transform: translateY(-20px);
-    transition: display 0.3s ease, transform 0.3s ease;
+    transition: display 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 
     &.open {
+      display: flex;
       opacity: 1;
       transform: translateY(0);
     }
