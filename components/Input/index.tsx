@@ -33,6 +33,7 @@ const Input: React.FC<InputProps> = ({
   const handleBlur = () => {
     if (!disabled) {
       setIsFocused(false);
+      onChange(value.trim());
       if (validate) {
         validate();
       }
@@ -42,7 +43,7 @@ const Input: React.FC<InputProps> = ({
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    onChange(e.target.value.trim());
+    onChange(e.target.value);
   };
 
   return (
@@ -50,17 +51,24 @@ const Input: React.FC<InputProps> = ({
       className={`${inputStyles.wrapper} ${error ? inputStyles.hasError : ""}`}
     >
       {type === "textarea" ? (
-        <textarea
-          className={`${inputStyles.input} ${inputStyles.textarea} ${
-            isFocused ? inputStyles.focused : ""
-          } ${error ? inputStyles.error : ""}`}
-          value={value}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder={placeholder}
-          disabled={disabled}
-        />
+        <div className={inputStyles.textareaWrapper}>
+          <textarea
+            className={`${inputStyles.input} ${inputStyles.textarea} ${
+              isFocused ? inputStyles.focused : ""
+            } ${error ? inputStyles.error : ""}`}
+            value={value}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={placeholder}
+            disabled={disabled}
+          />
+          <img
+            src="/icons/resize.svg"
+            alt="Resize icon"
+            className={inputStyles.resizeIcon}
+          />
+        </div>
       ) : (
         <input
           className={`${inputStyles.input} ${

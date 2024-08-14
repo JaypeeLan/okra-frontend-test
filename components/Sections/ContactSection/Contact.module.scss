@@ -47,6 +47,10 @@
     $gap: $spacing-2xl
   );
   width: 100%;
+  max-width: 309px;
+  @include respond(phone) {
+    max-width: 100%;
+  }
 }
 
 .nameFields {

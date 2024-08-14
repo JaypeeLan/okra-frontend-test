@@ -92,10 +92,10 @@ export const Footerlinks = [
 ];
 
 export const options = [
-  { value: "AWS", label: "AWS" },
-  { value: "Azure", label: "Azure" },
-  { value: "Google Cloud", label: "Google Cloud" },
-  { value: "Render", label: "Render" },
-  { value: "Vercel", label: "Vercel" },
+  { value: "Whatsapp", label: "Whatsapp" },
+  { value: "Twitter", label: "Twitter" },
+  { value: "Facebook", label: "Facebook" },
+  { value: "Instagram", label: "Instagram" },
+  { value: "Linkedin", label: "Linkedin" },
   { value: "Others", label: "Others" },
 ];

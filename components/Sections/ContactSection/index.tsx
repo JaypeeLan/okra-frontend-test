@@ -108,7 +108,7 @@ const Form: React.FC = () => {
             options={options}
             value={formData.selectedOption}
             onChange={handleDropdownChange}
-            placeholder="Select an option"
+            placeholder="How did you find us?"
             error={!!errors.selectedOption}
             validationText={errors.selectedOption}
           />
@@ -131,7 +131,7 @@ const Form: React.FC = () => {
             validate={() => validateField("message")}
           />
           <Button type="submit" disabled={loading} loading={loading}>
-            {loading ? "Sending message..." : "Send Message"}
+            {loading ? "Sending message..." : "Contact sales"}
           </Button>
         </form>
       </div>

@@ -61,6 +61,20 @@
 .textarea {
   min-height: 134px;
   transition: min-height 0.2s;
+  resize: none;
+}
+
+.textareaWrapper {
+  position: relative;
+}
+
+.resizeIcon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 4px;
+  bottom: 8px;
+  pointer-events: none;
 }
 
 .focused {
